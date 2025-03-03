@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Event - Event Management System</title>
+    <style>
+        body {
+            font-family: 'Brush Script MT', serif;
+            margin: 0;
+            padding: 0;
+            color: #555;
+            background-color: #fff7f9;
+        }
+
+        header {
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            color: #FFF;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+            font-family: 'Brush Script MT', cursive;
+            letter-spacing: 2px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+
+
+        .ken-burns {
+            position: relative;
+            width: 100%;
+            max-width: 650px;
+            height: 350px;
+            overflow: hidden;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .ken-burns img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .ken-burns img.active {
+            opacity: 1;
+            animation: zoom 10s infinite alternate ease-in-out;
+        }
+	.ken-burns img:first-child {
+    	opacity: 1;
+	}
+
+
+        @keyframes zoom {
+            0% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .event-details h2, .event-form h3 {
+            text-align: center;
+            color: #d9534f;
+            font-size: 1.8em;
+        }
+
+        .event-details p {
+            font-size: 1.1em;
+            margin-top: 15px;
+            line-height: 1.6;
+            text-align: center;
+            color: #666;
+        }
+
+        .event-form {
+            margin-top: 30px;
+            padding: 25px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .event-form label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #d9534f;
+        }
+
+        .event-form input, .event-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .event-form button {
+            background-color: #d9534f;
+            color: #FFF;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .event-form button:hover {
+            background-color: #c43d38;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Wedding Event Details</h1>
+</header>
+
+<div class="container">
+    <!-- Ken Burns Effect Section -->
+    <div class="ken-burns" id="kenBurns">
+        <img src="images/corporate-event1.jpeg" alt="Corporate Event Image 1" class="active">
+        <img src="images/corporate-event2.jpeg" alt="Corporate Event Image 2">
+        <img src="images/corporate-event3.jpeg" alt="Corporate Event Image 3">
+    </div>
+</div>
+
+    <!-- Event Details Section -->
+    <div class="event-details">
+        <h2>Our Wedding Planning Services</h2>
+        <p>At our event management service, we take pride in crafting exquisite and memorable wedding experiences. From venue selection to catering and décor, we ensure every detail resonates with your vision.</p>
+        <p>With us, you’ll enjoy a seamless experience that brings your dream wedding to life with elegance, sophistication, and a touch of magic.</p>
+    </div>
+
+    <!-- Event Inquiry Form Section -->
+    <div class="event-form">
+        <h3>Tell Us About Your Wedding</h3>
+        <form name="contact-form" id="contact-form" action="#" method="post">
+            <label for="client-name">👤 Full Name</label>
+            <input type="text" id="client-name" name="client-name" placeholder="Enter your full name" required>
+
+	    <label for="number">☎ Phone Number</label>
+            <input type="tel" id="Phone number" name="Phone number" placeholder="123-45-678" required>
+
+            <label for="wedding-date">📅 Wedding Date</label>
+            <input type="date" id="wedding-date" name="wedding-date" required>
+
+            <label for="location">📍 Preferred Location</label>
+            <input type="text" id="location" name="location" placeholder="Enter preferred location" required>
+
+            <label for="guest-count">👥 Estimated Guest Count</label>
+            <input type="number" id="guest-count" name="guest-count" placeholder="Approximate number of guests" required>
+
+            <label for="notes">✍ Additional Details</label>
+            <textarea id="notes" name="notes" rows="4" placeholder="Additional details or specific requests"></textarea>
+
+            <button type="submit">Submit Inquiry</button>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Event Management System</p>
+</footer>
+
+<script>
+
+let index = 0;
+    const images = document.querySelectorAll(".ken-burns img");
+
+    function changeImage() {
+        images.forEach(img => img.classList.remove("active"));
+        images[index].classList.add("active");
+        index = (index + 1) % images.length;
+    }
+
+    setInterval(changeImage, 5000); 
+
+
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxX-dzHOjZU-zyNqSzeT9UUKNFYFBdVCq3TU3wdHGKYE4QDFc6iJUAolGjyXpnFXmQVcw/exec';
+    const form = document.forms['contact-form'];
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => alert("Thank you! Your form has been submitted successfully."))
+            .then(() => { window.location.reload(); })
+            .catch(error => console.error('Error!', error.message));
+    });
+</script>
+
+</body>
+</html>

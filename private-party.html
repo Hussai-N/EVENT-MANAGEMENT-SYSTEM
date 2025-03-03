@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Party Events - Event Management System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fff7e6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(to right, #ffa69e, #ffcdb2, #efe5dc, #ffcad4, #efe5dc, #ffcdb2, #f49cbb);
+            color: #FFF;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3.2em;
+            margin: 0;
+            font-family: 'Pacifico', cursive;
+            letter-spacing: 2px;
+            background: linear-gradient(90deg, #ff6bcb, #f9d423);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: pulse 3s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        section {
+            padding: 60px 20px;
+            background: #ffffff;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 107, 203, 0.2);
+            border-radius: 50%;
+            z-index: 0;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(50px, 50px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        section * {
+            position: relative;
+            z-index: 1;
+        }
+
+        h2, h3 {
+            font-family: 'Pacifico', cursive;
+            font-size: 2em;
+            text-align: center;
+            color: #e9877e;
+            text-shadow: 0 0 10px rgba(255, 107, 203, 0.5);
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .ken-burns {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+.ken-burns {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.ken-burns img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: scale(1);
+    transition: opacity 1s ease-in-out, transform 15s linear; /* Smooth fade and zoom */
+}
+
+.ken-burns img.active {
+    opacity: 1;
+    transform: scale(1.2); /* This makes the image slowly zoom */
+    z-index: 1;
+}
+
+
+
+        .event-form {
+            background: linear-gradient(135deg, #fff, #fef3f9);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+            color: #ff6bcb;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid #f9d423;
+            border-radius: 8px;
+        }
+
+        button {
+            background: #ff6bcb;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Pacifico', cursive;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: #f9d423;
+            transform: translateY(-3px);
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Party Events</h1>
+</header>
+
+<div class="container">
+    <section>
+        <div class="ken-burns">
+    <img src="images/private-party1.webp" class="active">
+    <img src="images/private-party2.webp">
+    <img src="images/private-party3.webp">
+    <img src="images/private-party4.webp">
+    <img src="images/private-party5.webp">
+    <img src="images/private-party6.webp">
+	</div>
+    </section>
+
+    <section>
+        <h2>Private Party Planning</h2>
+        <p>Let us make your private party unforgettable with stunning decor, delicious catering, and perfect vibes!</p>
+    </section>
+
+    <section>
+        <h2>Birthday Party Planning</h2>
+        <p>Birthdays only come once a year - let's make it legendary! From themes to surprises, we’ve got you covered.</p>
+    </section>
+
+    <section class="event-form">
+        <h3>Tell Us About Your Party 🎉</h3>
+        <form name="contact-form">
+            <label>👤 Full Name</label>
+            <input type="text" name="clientName" required>
+
+            <label>☎ Phone Number</label>
+            <input type="tel" name="PhoneNumber" required>
+
+            <label>🎂 Party Type</label>
+            <input type="text" name="partyType" required>
+
+            <label>📅 Party Date</label>
+            <input type="date" name="partyDate" required>
+
+            <label>📍 Location</label>
+            <input type="text" name="location" required>
+
+            <label>👥 Guest Count</label>
+            <input type="number" name="guestCount" required>
+
+            <label>✍ Additional Notes</label>
+            <textarea name="notes"></textarea>
+
+            <button type="submit">Submit Inquiry</button>
+        </form>
+    </section>
+</div>
+
+<footer>
+    &copy; 2024 Party Events - Making Every Moment Special
+</footer>
+
+<script>
+    const images = document.querySelectorAll('.ken-burns img');
+    let current = 0;
+
+    function switchImage() {
+        images[current].classList.remove('active');
+        current = (current + 1) % images.length;
+        images[current].classList.add('active');
+    }
+
+    setInterval(switchImage, 5000);
+
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwOGxwPrp3g6FplmgRW8-5xtPFaY1iEcsxyM0ZqBh8-Yfz8vKRlbv6LTTFODfLtxOKf2g/exec';
+    const form = document.forms['contact-form'];
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => alert("Thank you for reaching out! Our event planners will connect with you soon to start creating your unforgettable party experience."))
+            .then(() => { window.location.reload(); })
+            .catch(error => console.error('Error!', error.message));
+    });
+
+</script>
+
+</body>
+</html>

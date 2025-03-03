@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Management System</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(to right, #931e09, #be6b06, #ffcb1f, #efa905, #ac4809, #d78f05, #e49304);
+
+            color: #FFF;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        nav {
+            margin: 20px 0;
+        }
+	a {
+    		color: #ff5733; 
+    		text-decoration: none; 
+    		font-weight: bold;
+    		font-size: 18px;
+		}
+
+	a:hover {
+    		color: #FFD700; 
+    		text-decoration: none; 
+		}
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        section {
+            margin: 40px 0;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+	.contact-links {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 20px}
+
+.contact-links a {
+    display: flex;
+    align-items: center; 
+    text-decoration: none;
+    color: #333; 
+}
+
+.contact-links img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+
+        .card {
+            background: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            flex: 1 1 calc(30% - 40px);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            border-radius: 8px 8px 0 0;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            margin-top: 15px;
+            font-size: 1.2em;
+        }
+
+        .hero {
+    position: relative;
+    height: 400px;
+    background: url('images/banner.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px orange; 
+    font-family: 'Pacifico', cursive;
+    font-size: 2em; 
+    font-weight: bold;
+}
+
+
+        .portfolio {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .portfolio img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+
+        .process {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+	    
+        }
+
+        .step {
+            text-align: center;
+            margin: 20px;
+            padding: 20px;
+            flex: 1;
+            max-width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        .testimonials {
+            text-align: center;
+        }
+
+        .testimonial {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 8px;
+            background: #f9f9f9;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	    
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Event Management System</h1>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#process">Process</a>
+	<a href="review">Reviews</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+
+<!-- Hero Section -->
+<div class="hero">
+    Transforming Events into Unforgettable Experiences!
+</div>
+
+<br></br>
+<br></br>
+
+<div class="container">
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p><b>Unforgettable Events, Perfectly Tailored to Your Vision</b></p>
+<p>✧₊⁺At Event Management System, we are passionate about transforming ideas into extraordinary experiences. With over a decade of expertise in the event planning industry, we pride ourselves on delivering personalized and memorable events that leave a lasting impression.</p>
+
+<p>✧₊⁺We specialize in a wide array of services to cater to diverse needs, including private parties, corporate events, and wedding celebrations. From intimate gatherings to large-scale occasions, we bring creativity and meticulous attention to detail to every event we plan.</p>
+
+<p>✧₊⁺Whether it's a professional conference, an elegant wedding, or a lively private party, our dedicated team ensures your event is flawlessly executed. We handle everything from conceptualization and planning to execution and coordination, allowing you to enjoy your special moments without stress.</p>
+
+<p>✧₊⁺Our commitment to excellence, innovation, and customer satisfaction has earned us a reputation as a trusted partner in event management. Let us turn your vision into reality and create moments that matter, with events designed to inspire, connect, and celebrate.</p>
+    </section>
+
+<br></br>
+<br></br>
+
+        <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="cards">
+            <a href="corporate-event.html" class="card">
+                <img src="images/corporate-event.webp" alt="Corporate Event">
+                <h3>Corporate Events</h3>
+            </a>
+            <a href="wedding-event.html" class="card">
+                <img src="images/wedding-event.webp" alt="Wedding">
+                <h3>Weddings</h3>
+            </a>
+            <a href="private-party.html" class="card">
+                <img src="images/private-party.webp" alt="Private Party">
+                <h3>Private Parties</h3>
+            </a>
+        </div>
+    </section>
+
+<br></br>
+<br></br>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <h2>Lavish Moments</h2>
+        <div class="portfolio">
+            <img src="images/event1.jpeg" alt="Event 1">
+            <img src="images/event2.jpeg" alt="Event 2">
+            <img src="images/event3.jpeg" alt="Event 3">
+            <img src="images/event4.jpeg" alt="Event 4">
+        </div>
+    </section>
+
+<br></br>
+<br></br>
+
+    <!-- Process Section -->
+    <section id="process">
+        <h2>Our Process</h2>
+        <div class="process">
+            <div class="step">
+                <h3>1. Consultation</h3>
+                <p>Understanding your needs and goals.</p>
+            </div>
+            <div class="step">
+                <h3>2. Planning</h3>
+                <p>Creating a detailed plan for your event.</p>
+            </div>
+            <div class="step">
+                <h3>3. Execution</h3>
+                <p>Bringing your vision to life flawlessly.</p>
+            </div>
+        </div>
+    </section>
+
+<br></br>
+<br></br>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonials">
+            <div class="testimonial">
+                <p>"Fantastic team and flawless execution!"</p>
+                <p>- Hari Babu M.</p>
+            </div>
+            <div class="testimonial">
+                <p>"Made our wedding unforgettable. Thank you!"</p>
+                <p>- Adithya KSM.</p>
+            </div>
+        </div>
+    </section>
+
+<br></br>
+<br></br>
+
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-links">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=aadhilmd15@gmail.com">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="Email Icon">
+                Email
+            </a>
+            <a href="https://www.instagram.com/_madswagin8/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Icon">
+                Instagram
+            </a>
+            
+            
+            <a href="https://wa.me/9629960565" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon">
+                WhatsApp
+            </a>
+        </div>
+    </section>
+
+<br></br>
+<br></br>
+
+</div>
+
+<footer>
+    <p>&copy; 2024 Event Management System</p>
+</footer>
+
+</body>
+</html>

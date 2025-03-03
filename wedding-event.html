@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <title>Wedding Event - Event Management System</title>
+    <style>
+        body {
+            font-family: 'Brush Script MT', serif;
+            margin: 0;
+            padding: 0;
+            color: #555;
+            background-color: #fff7f9;
+	    background: white;
+    	    background-size: 400% 400%;
+    	    animation: gradientBG 10s ease infinite;
+        }
+
+	@keyframes gradientBG {
+    	    0% { background-position: 0% 50%; }
+    	    50% { background-position: 100% 50%; }
+    	    100% { background-position: 0% 50%; }
+	}
+
+        header {
+            background: linear-gradient(to right, #a47a1e, #d3a84c, #ffec94, #e6be69, #ffd87c, #b58f3e, #956d13);
+            color: #FFD700; 
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+
+
+        .ken-burns {
+            position: relative;
+            width: 100%;
+            max-width: 650px;
+            height: 350px;
+            overflow: hidden;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+        }
+
+        .ken-burns img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .ken-burns img.active {
+            opacity: 1;
+            animation: zoom 10s infinite alternate ease-in-out;
+        }
+	.ken-burns img:first-child {
+    	opacity: 1;
+	}
+
+
+        @keyframes zoom {
+            0% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .event-details h2, .event-form h3 {
+            text-align: center;
+            color: #d9534f;
+            font-size: 1.8em;
+        }
+
+        .event-details p {
+            font-size: 1.1em;
+            margin-top: 15px;
+            line-height: 1.6;
+            text-align: center;
+            color: #666;
+        }
+
+        .event-form {
+            margin-top: 30px;
+            padding: 25px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .event-form label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #d9534f;
+        }
+
+        .event-form input, .event-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+.event-form button {
+    background: linear-gradient(135deg, #FF6B6B, #FFA07A);  
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    outline: none;
+}
+
+.event-form button:hover {
+    background: linear-gradient(135deg, #FFA07A, #FF6B6B);
+    transform: translateY(-3px) scale(1.1); 
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+
+	input, textarea {
+    		border: 2px solid #FFD700;
+    		background-color: #fff;
+    		transition: box-shadow 0.3s ease;
+	}
+
+	input:focus, textarea:focus {
+    		box-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+	}
+
+
+        footer {
+    		background: #333;
+    		color: #FFD700;
+    		text-shadow: 1px 1px 3px rgba(255, 215, 0, 0.7);
+	}
+
+
+	h1, h2, h3 {
+    		font-family: 'Great Vibes', cursive;
+    		font-size: 3em;
+    		color: #800000 !important;
+    		letter-spacing: 2px;
+	}
+	
+	label {
+		font-family: 'Great Vibes', cursive;
+
+}
+
+	p {
+font-size: 1.5em !important;
+color: #d4af37 !important;
+} 
+
+.testimonials {
+    background-color: #fef6e4;
+    color: #d4af37; 
+    padding: 30px;
+    text-align: center;
+    margin: 30px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+}
+
+.testimonials h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5em;
+    color: #d9534f;
+}
+
+.testimonials blockquote {
+    font-size: 1.7em;
+    color: #d4af37;  
+    margin: 15px 0;
+    font-style: italic;
+    border-left: 4px solid #ffd700;
+    padding-left: 10px;
+}
+
+.testimonials blockquote p {
+    color: #d4af37; 
+}
+
+.why-choose-us {
+    background-color: #fff7f9;
+    padding: 40px;
+    margin: 30px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+.why-choose-us h2 {
+    text-align: center;
+    color: #d9534f;
+    font-family: 'Great Vibes', cursive;
+}
+.why-choose-us ul {
+    list-style: none;
+    padding: 0;
+}
+.why-choose-us li {
+    color: #d4af37;
+    font-size: 1.5em;
+    margin-bottom: 12px;
+    padding-left: 25px;
+    background: url('https://cdn-icons-png.flaticon.com/512/845/845646.png') no-repeat left center / 18px 18px;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Wedding Event Details</h1>
+</header>
+<br></br>
+<br></br>
+
+<div class="container">
+    <!-- Ken Burns Effect Section -->
+    <div class="ken-burns" id="kenBurns">
+        <img src="images/wedding-event1.webp" alt="Corporate Event Image 1" class="active">
+        <img src="images/wedding-event2.webp" alt="Corporate Event Image 2">
+        <img src="images/wedding-event3.webp" alt="Corporate Event Image 3">
+    </div>
+</div>
+<br></br>
+<br></br>
+
+<div class="why-choose-us">
+    <h2>Why Choose Our Wedding Planning Services?</h2>
+    <ul>
+        <li><strong>Expert Planners:</strong> Our team has organized over 500+ weddings with diverse themes.</li>
+        <li><strong>End-to-End Services:</strong> From pre-wedding photoshoots to honeymoon packages.</li>
+        <li><strong>Custom Themes:</strong> Vintage, Modern, Boho — we craft your story.</li>
+        <li><strong>Budget Friendly:</strong> Packages tailored to suit every budget.</li>
+    </ul>
+</div>
+<br></br>
+<br></br>
+
+
+    <!-- Event Details Section -->
+    <div class="event-details">
+        <h2>Our Wedding Planning Services</h2>
+        <p>At our event management service, we take pride in crafting exquisite and memorable wedding experiences. From venue selection to catering and décor, we ensure every detail resonates with your vision.</p>
+        <p>With us, you’ll enjoy a seamless experience that brings your dream wedding to life with elegance, sophistication, and a touch of magic.</p>
+    </div>
+<br></br>
+<br></br>
+
+<div class="testimonials">
+    <h2>What Our Happy Couples Say</h2>
+    <blockquote>
+        "Our wedding was nothing short of magical, all thanks to this incredible team! Every detail was perfect." - <em>Ananya & Rohit</em>
+    </blockquote>
+    <blockquote>
+        "The decor, food, and organization exceeded our expectations. Highly recommended!" - <em>Meera & Akash</em>
+    </blockquote>
+</div>
+<br></br>
+<br></br>
+
+<!-- Event Inquiry Form Section -->
+<div class="event-form">
+    <h3>Tell Us About Your Wedding</h3>
+    <form name="contact-form" id="contact-form" action="#" method="post">
+        <label for="client-name">👤 Full Name</label>
+        <input type="text" id="client-name" name="client-name" placeholder="Enter your full name" required>
+
+        <label for="phone-number">☎ Phone Number</label>
+        <input type="tel" id="phone-number" name="phone-number" placeholder="123-456-7890" required>
+
+        <label for="wedding-date">📅 Wedding Date</label>
+        <input type="date" id="wedding-date" name="wedding-date" required>
+
+        <label for="location">📍 Preferred Location</label>
+        <input type="text" id="location" name="location" placeholder="Enter preferred location" required>
+
+        <label for="guest-count">👥 Estimated Guest Count</label>
+        <input type="number" id="guest-count" name="guest-count" placeholder="Approximate number of guests" required>
+
+        <label for="notes">✍ Additional Details</label>
+        <textarea id="notes" name="notes" rows="4" placeholder="Additional details or specific requests"></textarea>
+
+        <button type="submit">Submit Inquiry</button>
+    </form>
+</div>
+
+
+</div>
+
+<footer>
+    <p>&copy; 2024 Event Management System</p>
+</footer>
+
+<script>
+
+let index = 0;
+    const images = document.querySelectorAll(".ken-burns img");
+
+    function changeImage() {
+        images.forEach(img => img.classList.remove("active"));
+        images[index].classList.add("active");
+        index = (index + 1) % images.length;
+    }
+
+    setInterval(changeImage, 5000); 
+
+
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxX-dzHOjZU-zyNqSzeT9UUKNFYFBdVCq3TU3wdHGKYE4QDFc6iJUAolGjyXpnFXmQVcw/exec';
+    const form = document.forms['contact-form'];
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => alert("Thank you for reaching out! Our dedicated event specialists will contact you soon to help make your wedding truly unforgettable."))
+            .then(() => { window.location.reload(); })
+            .catch(error => console.error('Error!', error.message));
+    });
+</script>
+
+</body>
+</html>
